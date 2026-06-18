@@ -464,13 +464,7 @@ function Hero({
             The Code Forge
           </span>
         </h1>
-        <p
-          className="hero-anim hero-fade mt-6 max-w-2xl text-sm leading-7 text-white/72 sm:text-base"
-          style={{ animationDelay: '0.52s' }}
-        >
-          Interactive websites, portfolio systems, and high-trust web apps with the finish expected from
-          serious brands.
-        </p>
+
       </motion.div>
 
       <div
