@@ -447,7 +447,7 @@ function Hero({
       <div className="absolute inset-x-0 bottom-0 z-30 h-40 bg-gradient-to-t from-[#070604] to-transparent" aria-hidden="true" />
 
       <motion.div
-        className="pointer-events-none absolute left-0 right-0 top-[13%] z-30 flex flex-col items-center px-5 text-center"
+        className="pointer-events-none absolute inset-0 z-30 flex flex-col items-center justify-center px-5 text-center"
         style={{ y: heroTextY, opacity: heroTextOpacity }}
       >
         <p
