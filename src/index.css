@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+* {
+  box-sizing: border-box;
+  font-family: 'Jost', sans-serif;
+}
+
+:root {
+  --color-void: #020202;
+  --color-obsidian: #070604;
+  --color-graphite: #11100d;
+  --color-panel: rgba(255, 255, 255, 0.052);
+  --color-panel-strong: rgba(255, 255, 255, 0.078);
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-border-strong: rgba(245, 218, 178, 0.28);
+  --color-accent: #c99355;
+  --color-accent-bright: #f2d39c;
+  --color-accent-deep: #8f572a;
+  color: #ffffff;
+  background: var(--color-void);
+  font-family: 'Jost', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    linear-gradient(180deg, #030303 0%, #070604 42%, #020202 100%),
+    #020202;
+  user-select: none;
+  cursor: default;
+}
+
+button,
+a,
+input,
+textarea {
+  font: inherit;
+}
+
+input,
+textarea {
+  user-select: auto;
+  cursor: text;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+::selection {
+  background: rgba(201, 147, 85, 0.42);
+  color: #ffffff;
+}
+
+.font-playfair {
+  font-family: 'Bodoni Moda', serif;
+}
+
+.text-accent {
+  color: var(--color-accent-bright);
+}
+
+.glass-nav {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.07)),
+    rgba(9, 8, 6, 0.78);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 18px 60px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(24px) saturate(130%);
+}
+
+.premium-surface {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.025) 52%, rgba(201, 147, 85, 0.055)),
+    rgba(6, 5, 4, 0.76);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.035),
+    0 28px 90px rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(22px) saturate(120%);
+}
+
+.premium-surface.absolute {
+  position: absolute;
+}
+
+.premium-surface::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: '';
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.15), transparent 24%, transparent 74%, rgba(201, 147, 85, 0.13)),
+    repeating-linear-gradient(
+      112deg,
+      transparent 0,
+      transparent 54px,
+      rgba(255, 255, 255, 0.035) 55px,
+      transparent 56px
+    );
+  opacity: 0.58;
+}
+
+.premium-surface::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+}
+
+.premium-interactive {
+  transition:
+    border-color 260ms ease,
+    background-color 260ms ease,
+    box-shadow 260ms ease,
+    color 260ms ease,
+    transform 260ms ease;
+}
+
+.premium-interactive:hover {
+  border-color: var(--color-border-strong);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 34px 105px rgba(0, 0, 0, 0.48);
+}
+
+.premium-button {
+  background:
+    linear-gradient(135deg, #f1d199 0%, #c99355 42%, #8f572a 100%);
+  color: #080604;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    0 18px 45px rgba(201, 147, 85, 0.24);
+}
+
+.premium-button:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 22px 58px rgba(201, 147, 85, 0.32);
+}
+
+.whatsapp-action {
+  border: 1px solid rgba(132, 255, 182, 0.38);
+  background:
+    radial-gradient(circle at 30% 12%, rgba(255, 255, 255, 0.55), transparent 30%),
+    linear-gradient(135deg, #38f28b 0%, #25d366 48%, #128c4a 100%);
+  color: #031208;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.46),
+    0 18px 44px rgba(37, 211, 102, 0.22);
+}
+
+.whatsapp-action:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.58),
+    0 22px 58px rgba(37, 211, 102, 0.32);
+}
+
+.ghost-button {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+}
+
+.ghost-button:hover {
+  border-color: rgba(245, 218, 178, 0.34);
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.ai-chat-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(242, 211, 156, 0.5) rgba(255, 255, 255, 0.04);
+}
+
+.ai-chat-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ai-chat-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ai-chat-scroll::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(242, 211, 156, 0.5);
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--color-accent-bright);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-eyebrow::before,
+.section-eyebrow::after {
+  width: 28px;
+  height: 1px;
+  content: '';
+  background: linear-gradient(90deg, transparent, rgba(242, 211, 156, 0.76));
+}
+
+.section-eyebrow::after {
+  background: linear-gradient(90deg, rgba(242, 211, 156, 0.76), transparent);
+}
+
+.section-shell {
+  position: relative;
+  overflow: hidden;
+  padding: 132px 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 18%),
+    linear-gradient(90deg, rgba(201, 147, 85, 0.05), transparent 30%, rgba(106, 152, 165, 0.035) 72%, transparent),
+    repeating-linear-gradient(
+      112deg,
+      rgba(255, 255, 255, 0.035) 0,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px,
+      transparent 72px
+    ),
+    var(--color-obsidian);
+}
+
+.section-shell::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 28%, rgba(0, 0, 0, 0.38)),
+    linear-gradient(115deg, transparent 0 42%, rgba(201, 147, 85, 0.045) 42% 43%, transparent 43% 100%);
+  opacity: 0.88;
+}
+
+.section-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-grid {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 120px 120px;
+  mask-image: linear-gradient(180deg, transparent, black 16%, black 72%, transparent);
+  opacity: 0.16;
+}
+
+.hero-vignette {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.12) 44%, rgba(0, 0, 0, 0.74)),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.12) 38%, rgba(2, 2, 2, 0.88));
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-text-fill-color: #ffffff;
+  box-shadow: 0 0 0 1000px #050505 inset;
+}
+
+@keyframes heroReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
+    filter: blur(12px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroZoom {
+  0% {
+    transform: scale(1.12);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hero-anim {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-reveal {
+  animation-name: heroReveal;
+  animation-duration: 1.18s;
+}
+
+.hero-fade {
+  animation-name: heroFadeUp;
+  animation-duration: 0.95s;
+}
+
+.hero-zoom {
+  animation: heroZoom 2.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  background-position: center bottom;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(242, 211, 156, 0.92);
+  outline-offset: 4px;
+}
+
+@media (max-width: 700px) {
+  .section-shell {
+    padding: 82px 0;
+  }
+
+  .section-eyebrow::before,
+  .section-eyebrow::after {
+    width: 18px;
+  }
+
+  .hero-grid {
+    background-size: 72px 72px;
+    opacity: 0.12;
+  }
+
+  .hero-vignette {
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.08) 34%, rgba(2, 2, 2, 0.9)),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.08) 56%, rgba(0, 0, 0, 0.66));
+  }
+}
+
+@media (max-width: 480px) {
+  .premium-surface {
+    backdrop-filter: blur(16px) saturate(115%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-anim,
+  .hero-zoom {
+    opacity: 1;
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
