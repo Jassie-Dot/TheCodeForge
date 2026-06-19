@@ -436,9 +436,9 @@ function Hero({
       <div className="hero-vignette absolute inset-0 z-30" aria-hidden="true" />
       <div className="absolute inset-x-0 bottom-0 z-30 h-40 bg-gradient-to-t from-[#070604] to-transparent" aria-hidden="true" />
 
-      <div className="relative z-30 mx-auto grid h-full w-full max-w-[1440px] content-center gap-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
+      <div className="relative z-30 mx-auto grid h-full w-full max-w-[1440px] content-center gap-12 lg:gap-16">
         <motion.div
-          className="grid justify-items-start gap-5 text-left sm:justify-items-center sm:text-center lg:justify-items-start lg:text-left"
+          className="grid justify-items-start gap-5 text-left sm:justify-items-center sm:text-center"
           style={{ y: heroTextY, opacity: heroTextOpacity }}
         >
           <p
@@ -465,7 +465,7 @@ function Hero({
         </motion.div>
 
         <motion.div
-          className="hero-anim hero-fade grid gap-4 justify-self-stretch sm:justify-self-center lg:justify-self-end"
+          className="hero-anim hero-fade grid gap-6 justify-self-stretch sm:justify-self-center"
           style={{ y: heroActionsY, animationDelay: '0.78s' }}
         >
           <div className="premium-surface grid grid-cols-3 rounded-[8px] text-center">
@@ -476,7 +476,7 @@ function Hero({
               </div>
             ))}
           </div>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <motion.button
               type="button"
               onClick={() => scrollToSection('contact')}
