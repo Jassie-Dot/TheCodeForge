@@ -43,7 +43,7 @@ const BG_IMAGE_2 =
 
 const SPOTLIGHT_R = 260
 const TRANSPARENT_MASK = 'linear-gradient(transparent, transparent)'
-const contactEmail = 'thecodeforgee@gmail.com'
+const contactEmail = 'thecodeforge@outlook.com'
 const contactPhones = ['+91 9781010283', '+91 6280962201']
 const jaskaranPortfolio = 'https://jaskaranveerportfolio.vercel.app/'
 const manijitPortfolio = 'https://manijitportfolio.vercel.app/'
@@ -207,7 +207,7 @@ function App() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [submittedName, setSubmittedName] = useState('')
-  const [composeUrl, setComposeUrl] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const scrollToSection = useCallback(
     (target: string) => {
@@ -237,35 +237,35 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleContactSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    setIsSubmitting(true)
 
-    const formData = new FormData(event.currentTarget)
+    const form = event.currentTarget
+    const formData = new FormData(form)
+    
+    formData.append("access_key", "e9309d6c-966a-418a-9724-90d79afbef45")
+
     const name = String(formData.get('name') ?? '').trim()
-    const email = String(formData.get('email') ?? '').trim()
-    const phone = String(formData.get('phone') ?? '').trim()
-    const message = String(formData.get('message') ?? '').trim()
-    const subject = `New project request from ${name || 'CodeForge website'}`
-    const body = [
-      `Name: ${name || 'Not provided'}`,
-      `Email: ${email || 'Not provided'}`,
-      `Phone: ${phone || 'Not provided'}`,
-      '',
-      'Message:',
-      message || 'Not provided',
-    ].join('\n')
-    const nextComposeUrl = `https://mail.google.com/mail/?${new URLSearchParams({
-      view: 'cm',
-      fs: '1',
-      to: contactEmail,
-      su: subject,
-      body,
-    }).toString()}`
 
-    setComposeUrl(nextComposeUrl)
-    setSubmittedName(name || 'there')
-    window.open(nextComposeUrl, '_blank', 'noopener,noreferrer')
-    event.currentTarget.reset()
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+      const data = await response.json()
+      
+      if (data.success) {
+        setSubmittedName(name || 'there')
+        form.reset()
+      } else {
+        console.error('Error submitting form', data)
+      }
+    } catch (error) {
+      console.error('Error submitting form', error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -294,7 +294,7 @@ function App() {
       <Process shouldReduceMotion={shouldReduceMotion} />
       <Team shouldReduceMotion={shouldReduceMotion} />
       <Contact
-        composeUrl={composeUrl}
+        isSubmitting={isSubmitting}
         handleContactSubmit={handleContactSubmit}
         submittedName={submittedName}
         shouldReduceMotion={shouldReduceMotion}
@@ -645,22 +645,21 @@ function Team({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
         {founders.map((founder, index) => (
           <Reveal key={founder.name} delay={index * 0.08} shouldReduceMotion={shouldReduceMotion}>
             <motion.article
-              className="premium-surface premium-interactive group overflow-hidden rounded-[8px]"
+              className="premium-surface premium-interactive group flex flex-col items-center overflow-hidden rounded-[8px] p-8 text-center"
               whileHover={shouldReduceMotion ? undefined : { y: -9, scale: 1.008 }}
               transition={spring}
               style={revealStyle}
             >
-              <div className="relative h-80 overflow-hidden border-b border-white/10 bg-black">
+              <div className="relative h-48 w-48 shrink-0 overflow-hidden rounded-full border-4 border-white/10 bg-black sm:h-56 sm:w-56">
                 <img
                   src={founder.image}
                   alt={founder.name}
                   className={`h-full w-full object-cover opacity-92 transition duration-700 ease-out group-hover:scale-[1.03] ${founder.imageClass}`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
               </div>
-              <div className="p-6 sm:p-8">
+              <div className="mt-8 flex flex-col items-center">
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#f2d39c]">{founder.role}</p>
-                <h3 className="mt-3 text-4xl font-semibold text-white">{founder.name}</h3>
+                <h3 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">{founder.name}</h3>
                 <p className="mt-4 text-sm leading-7 text-white/66">{founder.description}</p>
                 <a
                   href={founder.portfolio}
@@ -681,12 +680,12 @@ function Team({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
 }
 
 function Contact({
-  composeUrl,
+  isSubmitting,
   handleContactSubmit,
   submittedName,
   shouldReduceMotion,
 }: {
-  composeUrl: string
+  isSubmitting: boolean
   handleContactSubmit: (event: FormEvent<HTMLFormElement>) => void
   submittedName: string
   shouldReduceMotion: boolean | null
@@ -717,8 +716,7 @@ function Contact({
                 What happens next
               </div>
               <p>
-                The form opens Gmail with your details filled in, then keeps a confirmation here so the
-                handoff stays clear.
+                Your message will be sent securely and directly to our team. We'll receive it instantly and reply to you as fast as possible.
               </p>
             </div>
           </div>
@@ -741,19 +739,8 @@ function Contact({
                 </div>
                 <h3 className="mt-8 text-4xl font-semibold text-white">Thank you, {submittedName}.</h3>
                 <p className="mt-5 max-w-xl text-sm leading-7 text-white/66">
-                  Gmail opened with your project brief. Send it from there and The Code Forge will reply as fast as possible.
+                  Your project brief has been successfully sent to our team. We will review it and get back to you as fast as possible.
                 </p>
-                {composeUrl ? (
-                  <a
-                    href={composeUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="premium-button mt-8 inline-flex min-h-12 w-fit items-center gap-2 rounded-full px-6 text-sm font-bold no-underline"
-                  >
-                    Open Gmail Again
-                    <Send className="h-4 w-4" aria-hidden="true" />
-                  </a>
-                ) : null}
               </motion.div>
             ) : (
               <motion.form
@@ -781,13 +768,14 @@ function Contact({
                 </label>
                 <motion.button
                   type="submit"
-                  className="premium-button inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-full border-0 px-7 text-sm font-bold"
-                  whileHover={shouldReduceMotion ? undefined : { scale: 1.015 }}
-                  whileTap={shouldReduceMotion ? undefined : { scale: 0.96 }}
+                  disabled={isSubmitting}
+                  className="premium-button inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-full border-0 px-7 text-sm font-bold disabled:opacity-70 disabled:cursor-not-allowed"
+                  whileHover={shouldReduceMotion || isSubmitting ? undefined : { scale: 1.015 }}
+                  whileTap={shouldReduceMotion || isSubmitting ? undefined : { scale: 0.96 }}
                   transition={floatSpring}
                 >
-                  Send Message
-                  <Send className="h-4 w-4" aria-hidden="true" />
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {!isSubmitting && <Send className="h-4 w-4" aria-hidden="true" />}
                 </motion.button>
               </motion.form>
             )}
