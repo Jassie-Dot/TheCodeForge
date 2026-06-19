@@ -37,6 +37,8 @@ body {
   background:
     linear-gradient(180deg, #030303 0%, #070604 42%, #020202 100%),
     #020202;
+  user-select: none;
+  cursor: default;
 }
 
 button,
@@ -44,6 +46,12 @@ a,
 input,
 textarea {
   font: inherit;
+}
+
+input,
+textarea {
+  user-select: auto;
+  cursor: text;
 }
 
 button {
