@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import { defineConfig, loadEnv, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -53,13 +52,4 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), tailwindcss(), localGeminiApi(apiKey)],
   }
-=======
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
-
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(), tailwindcss()],
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
 })

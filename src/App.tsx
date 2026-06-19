@@ -35,11 +35,8 @@ import {
   Zap,
   type LucideIcon,
 } from 'lucide-react'
-<<<<<<< HEAD
 import { AiChatbot } from './components/ui/ai-chatbot'
 import { contactEmail, contactPhones, submitContactForm } from './lib/contact'
-=======
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
 
 const BG_IMAGE_1 =
   'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260609_195923_b0ba8ace-1d1d-4f2c-9a28-1ab84b330680.png&w=1280&q=85'
@@ -48,11 +45,6 @@ const BG_IMAGE_2 =
 
 const SPOTLIGHT_R = 260
 const TRANSPARENT_MASK = 'linear-gradient(transparent, transparent)'
-<<<<<<< HEAD
-=======
-const contactEmail = 'thecodeforge@outlook.com'
-const contactPhones = ['+91 9781010283', '+91 6280962201']
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
 const jaskaranPortfolio = 'https://jaskaranveerportfolio.vercel.app/'
 const manijitPortfolio = 'https://manijitportfolio.vercel.app/'
 
@@ -251,33 +243,13 @@ function App() {
 
     const form = event.currentTarget
     const formData = new FormData(form)
-<<<<<<< HEAD
-=======
-    
-    formData.append("access_key", "e9309d6c-966a-418a-9724-90d79afbef45")
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
 
     const name = String(formData.get('name') ?? '').trim()
 
     try {
-<<<<<<< HEAD
       await submitContactForm(formData)
       setSubmittedName(name || 'there')
       form.reset()
-=======
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData
-      })
-      const data = await response.json()
-      
-      if (data.success) {
-        setSubmittedName(name || 'there')
-        form.reset()
-      } else {
-        console.error('Error submitting form', data)
-      }
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
     } catch (error) {
       console.error('Error submitting form', error)
     } finally {
@@ -322,10 +294,7 @@ function App() {
         shouldReduceMotion={shouldReduceMotion}
         showScrollTop={showScrollTop}
       />
-<<<<<<< HEAD
       <AiChatbot />
-=======
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
     </main>
   )
 }
@@ -448,13 +417,8 @@ function Hero({
     <section
       ref={heroRef}
       id="home"
-<<<<<<< HEAD
       className="relative grid min-h-[760px] w-full overflow-hidden bg-[#020202] px-5 pb-28 pt-32 sm:min-h-[720px] sm:px-8 lg:min-h-[92vh] lg:px-12"
       style={{ minHeight: 'clamp(760px, 92dvh, 980px)' }}
-=======
-      className="relative min-h-[92vh] w-full overflow-hidden bg-[#020202]"
-      style={{ minHeight: '92dvh' }}
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
     >
       <motion.div
         className="hero-zoom absolute inset-0 z-10 bg-cover bg-center bg-no-repeat"
@@ -472,7 +436,6 @@ function Hero({
       <div className="hero-vignette absolute inset-0 z-30" aria-hidden="true" />
       <div className="absolute inset-x-0 bottom-0 z-30 h-40 bg-gradient-to-t from-[#070604] to-transparent" aria-hidden="true" />
 
-<<<<<<< HEAD
       <div className="relative z-30 mx-auto grid h-full w-full max-w-[1440px] content-center gap-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
         <motion.div
           className="grid justify-items-start gap-5 text-left sm:justify-items-center sm:text-center lg:justify-items-start lg:text-left"
@@ -535,72 +498,6 @@ function Hero({
           </div>
         </motion.div>
       </div>
-=======
-      <motion.div
-        className="pointer-events-none absolute inset-0 z-30 flex flex-col items-center justify-center px-5 text-center"
-        style={{ y: heroTextY, opacity: heroTextOpacity }}
-      >
-        <p
-          className="hero-anim hero-fade mb-5 inline-flex rounded-full border border-white/14 bg-white/[0.07] px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.22em] text-white/78 backdrop-blur-md"
-          style={{ animationDelay: '0.18s' }}
-        >
-          Selective Web Systems Studio
-        </p>
-        <h1 className="max-w-6xl text-white leading-[0.88]" aria-label="The Code Forge">
-          <span
-            className="hero-anim hero-reveal block font-playfair text-6xl font-normal italic text-white drop-shadow-[0_18px_60px_rgba(0,0,0,0.58)] sm:text-8xl md:text-9xl"
-            style={{ animationDelay: '0.25s', letterSpacing: 0 }}
-          >
-            The Code Forge
-          </span>
-        </h1>
-
-      </motion.div>
-
-      <div
-        className="hero-anim hero-fade premium-surface absolute bottom-16 left-6 z-30 hidden max-w-[332px] rounded-[8px] p-5 sm:block md:left-10"
-        style={{ animationDelay: '0.7s' }}
-      >
-        <div className="grid grid-cols-3 gap-4 text-center">
-          {['Web apps', 'Portfolios', 'Launch UX'].map((item) => (
-            <div key={item} className="border-r border-white/10 last:border-r-0">
-              <p className="text-[0.67rem] font-bold uppercase tracking-[0.16em] text-white/42">Forge</p>
-              <p className="mt-2 text-sm font-semibold text-white">{item}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <motion.div
-        className="hero-anim hero-fade absolute bottom-10 left-5 right-5 z-30 flex max-w-full flex-col items-start gap-4 sm:bottom-20 sm:left-auto sm:right-10 sm:max-w-[338px] sm:gap-5 md:right-14"
-        style={{ animationDelay: '0.85s' }}
-      >
-        <p className="text-xs leading-relaxed text-white/80 sm:text-sm">
-          A direct path from strategy to shipped interface: services, live references, founders, and a
-          project brief flow ready for action.
-        </p>
-        <motion.div className="flex flex-wrap gap-3" style={{ y: heroActionsY }}>
-          <motion.button
-            type="button"
-            onClick={() => scrollToSection('contact')}
-            className="premium-button inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full border-0 px-7 py-3 text-sm font-bold transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f2d39c]"
-            whileHover={shouldReduceMotion ? undefined : { scale: 1.025, y: -2 }}
-            whileTap={shouldReduceMotion ? undefined : { scale: 0.95 }}
-            transition={floatSpring}
-          >
-            Start Your Project
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </motion.button>
-          <button
-            type="button"
-            onClick={() => scrollToSection('portfolio')}
-            className="ghost-button min-h-11 cursor-pointer rounded-full px-6 py-3 text-sm font-semibold text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f2d39c]"
-          >
-            View Our Work
-          </button>
-        </motion.div>
-      </motion.div>
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
     </section>
   )
 }
@@ -613,21 +510,13 @@ function Services({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }
         title="A build system for every digital layer."
         shouldReduceMotion={shouldReduceMotion}
       />
-<<<<<<< HEAD
       <div className="mx-auto grid w-full max-w-6xl gap-4 px-5 sm:grid-cols-2 xl:grid-cols-4">
-=======
-      <div className="mx-auto grid w-full max-w-6xl gap-4 px-5 md:grid-cols-2 xl:grid-cols-4">
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
         {services.map((service, index) => {
           const Icon = service.icon
           return (
             <Reveal key={service.title} delay={index * 0.06} shouldReduceMotion={shouldReduceMotion}>
               <motion.article
-<<<<<<< HEAD
                 className="premium-surface premium-interactive group relative grid min-h-[188px] grid-cols-[48px_1fr] gap-4 rounded-[8px] p-5 sm:min-h-[238px] sm:grid-cols-1 sm:p-6 xl:min-h-[278px]"
-=======
-                className="premium-surface premium-interactive group relative min-h-[278px] rounded-[8px] p-6"
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
                 whileHover={shouldReduceMotion ? undefined : { y: -9, scale: 1.012 }}
                 whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
                 transition={spring}
@@ -637,7 +526,6 @@ function Services({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }
                 <div className="grid h-12 w-12 place-items-center rounded-full bg-[linear-gradient(135deg,#f2d39c,#c99355)] text-[#080604] shadow-lg shadow-[#c99355]/15">
                   <Icon className="h-6 w-6" aria-hidden="true" />
                 </div>
-<<<<<<< HEAD
                 <div>
                   <h3 className="text-[1.35rem] font-semibold leading-tight text-white sm:mt-8 sm:text-2xl">{service.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-white/66 sm:mt-4 sm:leading-7">{service.description}</p>
@@ -645,13 +533,6 @@ function Services({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }
                     Explore layer
                   </span>
                 </div>
-=======
-                <h3 className="mt-8 text-2xl font-semibold text-white">{service.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-white/66">{service.description}</p>
-                <span className="absolute bottom-5 left-6 text-xs font-bold uppercase tracking-[0.14em] text-[#f2d39c] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  Explore layer
-                </span>
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
               </motion.article>
             </Reveal>
           )
@@ -676,17 +557,12 @@ function Portfolio({ shouldReduceMotion }: { shouldReduceMotion: boolean | null 
               href={work.href}
               target="_blank"
               rel="noreferrer"
-<<<<<<< HEAD
               className="premium-surface premium-interactive group grid overflow-hidden rounded-[8px] text-white no-underline lg:grid-cols-[minmax(0,1.08fr)_minmax(300px,0.92fr)]"
-=======
-              className="premium-surface premium-interactive group block rounded-[8px] text-white no-underline"
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
               whileHover={shouldReduceMotion ? undefined : { y: -10, scale: 1.006 }}
               whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
               transition={spring}
               style={revealStyle}
             >
-<<<<<<< HEAD
               <div className="relative aspect-[1.35] overflow-hidden border-b border-white/10 bg-black sm:aspect-[1.7] lg:aspect-auto lg:min-h-[360px] lg:border-b-0 lg:border-r lg:border-white/10">
                 <img
                   src={work.image}
@@ -696,17 +572,6 @@ function Portfolio({ shouldReduceMotion }: { shouldReduceMotion: boolean | null 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/24 via-transparent to-white/[0.03]" />
               </div>
               <div className="flex flex-col justify-between gap-5 p-5 sm:p-6">
-=======
-              <div className="relative aspect-[1.82] overflow-hidden border-b border-white/10 bg-black">
-                <img
-                  src={work.image}
-                  alt={`${work.title} preview`}
-                  className="h-full w-full object-cover opacity-95 transition duration-700 ease-out group-hover:scale-[1.035]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/24 via-transparent to-white/[0.03]" />
-              </div>
-              <div className="flex flex-col gap-5 p-6 sm:flex-row sm:items-end sm:justify-between">
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
                 <div>
                   <div className="flex flex-wrap gap-2">
                     {work.tags.map((tag) => (
@@ -719,17 +584,10 @@ function Portfolio({ shouldReduceMotion }: { shouldReduceMotion: boolean | null 
                     ))}
                   </div>
                   <p className="mt-5 text-xs font-bold uppercase tracking-[0.16em] text-[#f2d39c]">Portfolio reference</p>
-<<<<<<< HEAD
                   <h3 className="mt-3 text-2xl font-semibold leading-tight sm:text-3xl">{work.title}</h3>
                   <p className="mt-3 max-w-xl text-sm leading-7 text-white/66">{work.description}</p>
                 </div>
                 <span className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-black shadow-xl shadow-black/25 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 sm:inline-flex">
-=======
-                  <h3 className="mt-3 text-2xl font-semibold">{work.title}</h3>
-                  <p className="mt-3 max-w-xl text-sm leading-7 text-white/66">{work.description}</p>
-                </div>
-                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-black shadow-xl shadow-black/25 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
                   <ExternalLink className="h-5 w-5" aria-hidden="true" />
                 </span>
               </div>
@@ -749,7 +607,6 @@ function Process({ shouldReduceMotion }: { shouldReduceMotion: boolean | null })
         title="From brief to launch, every step earns its place."
         shouldReduceMotion={shouldReduceMotion}
       />
-<<<<<<< HEAD
       <div className="mx-auto grid w-full max-w-6xl gap-4 px-5 sm:grid-cols-2 lg:grid-cols-4">
         {processSteps.map((step, index) => (
           <Reveal key={step.title} delay={index * 0.07} shouldReduceMotion={shouldReduceMotion}>
@@ -757,15 +614,6 @@ function Process({ shouldReduceMotion }: { shouldReduceMotion: boolean | null })
               <span className="font-playfair text-5xl italic text-[#f2d39c]/32 sm:text-6xl">{index + 1}</span>
               <h3 className="mt-5 text-xl font-semibold text-white sm:mt-8">{step.title}</h3>
               <p className="mt-3 text-sm leading-7 text-white/64 sm:mt-4">{step.copy}</p>
-=======
-      <div className="mx-auto grid w-full max-w-6xl gap-4 px-5 lg:grid-cols-4">
-        {processSteps.map((step, index) => (
-          <Reveal key={step.title} delay={index * 0.07} shouldReduceMotion={shouldReduceMotion}>
-            <article className="premium-surface premium-interactive relative min-h-[258px] rounded-[8px] p-6">
-              <span className="font-playfair text-6xl italic text-[#f2d39c]/32">{index + 1}</span>
-              <h3 className="mt-8 text-xl font-semibold text-white">{step.title}</h3>
-              <p className="mt-4 text-sm leading-7 text-white/64">{step.copy}</p>
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
               <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-[#f2d39c]/65 to-transparent" />
             </article>
           </Reveal>
@@ -787,37 +635,22 @@ function Team({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
         {founders.map((founder, index) => (
           <Reveal key={founder.name} delay={index * 0.08} shouldReduceMotion={shouldReduceMotion}>
             <motion.article
-<<<<<<< HEAD
               className="premium-surface premium-interactive group grid gap-5 overflow-hidden rounded-[8px] p-5 text-left sm:grid-cols-[132px_1fr] sm:items-center sm:p-6 md:grid-cols-1 md:p-8 md:text-center"
-=======
-              className="premium-surface premium-interactive group flex flex-col items-center overflow-hidden rounded-[8px] p-8 text-center"
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
               whileHover={shouldReduceMotion ? undefined : { y: -9, scale: 1.008 }}
               transition={spring}
               style={revealStyle}
             >
-<<<<<<< HEAD
               <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-full border-4 border-white/10 bg-black md:mx-auto md:h-48 md:w-48 lg:h-56 lg:w-56">
-=======
-              <div className="relative h-48 w-48 shrink-0 overflow-hidden rounded-full border-4 border-white/10 bg-black sm:h-56 sm:w-56">
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
                 <img
                   src={founder.image}
                   alt={founder.name}
                   className={`h-full w-full object-cover opacity-92 transition duration-700 ease-out group-hover:scale-[1.03] ${founder.imageClass}`}
                 />
               </div>
-<<<<<<< HEAD
               <div className="flex flex-col items-start md:mt-8 md:items-center">
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#f2d39c]">{founder.role}</p>
                 <h3 className="mt-3 text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">{founder.name}</h3>
                 <p className="mt-3 text-sm leading-7 text-white/66 md:mt-4">{founder.description}</p>
-=======
-              <div className="mt-8 flex flex-col items-center">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#f2d39c]">{founder.role}</p>
-                <h3 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">{founder.name}</h3>
-                <p className="mt-4 text-sm leading-7 text-white/66">{founder.description}</p>
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
                 <a
                   href={founder.portfolio}
                   target="_blank"
@@ -956,15 +789,9 @@ function SectionHeading({
 }) {
   return (
     <Reveal shouldReduceMotion={shouldReduceMotion}>
-<<<<<<< HEAD
       <div className="mx-auto mb-10 max-w-4xl px-5 text-left sm:mb-14 sm:text-center">
         <p className="section-eyebrow justify-start sm:justify-center">{eyebrow}</p>
         <h2 className="mt-4 font-playfair text-[clamp(2.8rem,9vw,4.8rem)] font-normal italic leading-[0.94] text-white sm:mt-5">
-=======
-      <div className="mx-auto mb-14 max-w-4xl px-5 text-center">
-        <p className="section-eyebrow justify-center">{eyebrow}</p>
-        <h2 className="mt-5 font-playfair text-4xl font-normal italic leading-[0.93] text-white sm:text-6xl">
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
           {title}
         </h2>
         {copy ? (
@@ -1108,11 +935,7 @@ function FloatingActions({
       <motion.button
         type="button"
         onClick={() => setOpen((value) => !value)}
-<<<<<<< HEAD
         className="whatsapp-action inline-flex h-14 min-w-14 cursor-pointer items-center justify-center gap-2 rounded-full border-0 px-4 text-sm font-black"
-=======
-        className="premium-button grid h-14 w-14 cursor-pointer place-items-center rounded-full border-0"
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
         aria-label="WhatsApp The Code Forge"
         aria-expanded={open}
         whileHover={shouldReduceMotion ? undefined : { y: -3, scale: 1.04 }}
@@ -1120,10 +943,7 @@ function FloatingActions({
         transition={floatSpring}
       >
         {open ? <X className="h-6 w-6" aria-hidden="true" /> : <WhatsAppIcon className="h-6 w-6" aria-hidden="true" />}
-<<<<<<< HEAD
         <span className="hidden sm:inline">{open ? 'Close' : 'WhatsApp'}</span>
-=======
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
       </motion.button>
     </div>
   )
