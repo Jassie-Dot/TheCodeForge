@@ -465,22 +465,14 @@ function Hero({
         </motion.div>
 
         <motion.div
-          className="hero-anim hero-fade grid gap-6 justify-self-stretch sm:justify-self-center"
+          className="hero-anim hero-fade flex flex-col items-center gap-8 justify-self-stretch sm:justify-self-center mt-4"
           style={{ y: heroActionsY, animationDelay: '0.78s' }}
         >
-          <div className="premium-surface grid grid-cols-3 rounded-[8px] text-center">
-            {['Web apps', 'Portfolios', 'Launch UX'].map((item) => (
-              <div key={item} className="border-r border-white/10 px-3 py-4 last:border-r-0 sm:px-4">
-                <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-white/42">Forge</p>
-                <p className="mt-2 text-sm font-semibold text-white">{item}</p>
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:gap-6">
             <motion.button
               type="button"
               onClick={() => scrollToSection('contact')}
-              className="premium-button inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-full border-0 px-7 py-3 text-sm font-bold transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f2d39c]"
+              className="premium-button inline-flex min-h-[3.25rem] cursor-pointer items-center justify-center gap-2 rounded-full border-0 px-8 py-3 text-sm font-bold transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f2d39c]"
               whileHover={shouldReduceMotion ? undefined : { scale: 1.025, y: -2 }}
               whileTap={shouldReduceMotion ? undefined : { scale: 0.95 }}
               transition={floatSpring}
@@ -491,10 +483,18 @@ function Hero({
             <button
               type="button"
               onClick={() => scrollToSection('portfolio')}
-              className="ghost-button min-h-12 cursor-pointer rounded-full px-6 py-3 text-sm font-semibold text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f2d39c]"
+              className="ghost-button min-h-[3.25rem] cursor-pointer rounded-full px-8 py-3 text-sm font-semibold text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f2d39c]"
             >
               View Our Work
             </button>
+          </div>
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-4 text-[0.68rem] font-medium uppercase tracking-[0.18em] text-white/50 sm:gap-6">
+            {['Web apps', 'Portfolios', 'Launch UX'].map((item, i) => (
+              <div key={item} className="flex items-center gap-4 sm:gap-6">
+                <span className="text-white/80">{item}</span>
+                {i !== 2 && <div className="h-1 w-1 rounded-full bg-white/20" />}
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
