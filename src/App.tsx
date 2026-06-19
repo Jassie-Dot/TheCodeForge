@@ -447,9 +447,9 @@ function Hero({
           >
             Selective Web Systems Studio
           </p>
-          <h1 className="max-w-[760px] text-white leading-[0.86]" aria-label="The Code Forge">
+          <h1 className="w-full lg:max-w-none text-white leading-[0.86]" aria-label="The Code Forge">
             <span
-              className="hero-anim hero-reveal block text-balance font-playfair text-[clamp(3.35rem,13vw,8.75rem)] font-normal italic text-white drop-shadow-[0_18px_60px_rgba(0,0,0,0.58)]"
+              className="hero-anim hero-reveal block font-playfair text-[clamp(3.35rem,13vw,8.75rem)] font-normal italic text-white drop-shadow-[0_18px_60px_rgba(0,0,0,0.58)] lg:whitespace-nowrap"
               style={{ animationDelay: '0.25s', letterSpacing: 0 }}
             >
               The Code Forge
