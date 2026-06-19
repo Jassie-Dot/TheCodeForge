@@ -37,8 +37,6 @@ body {
   background:
     linear-gradient(180deg, #030303 0%, #070604 42%, #020202 100%),
     #020202;
-  user-select: none;
-  cursor: default;
 }
 
 button,
@@ -46,12 +44,6 @@ a,
 input,
 textarea {
   font: inherit;
-}
-
-input,
-textarea {
-  user-select: auto;
-  cursor: text;
 }
 
 button {
@@ -167,26 +159,6 @@ p {
     0 22px 58px rgba(201, 147, 85, 0.32);
 }
 
-<<<<<<< HEAD
-.whatsapp-action {
-  border: 1px solid rgba(132, 255, 182, 0.38);
-  background:
-    radial-gradient(circle at 30% 12%, rgba(255, 255, 255, 0.55), transparent 30%),
-    linear-gradient(135deg, #38f28b 0%, #25d366 48%, #128c4a 100%);
-  color: #031208;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.46),
-    0 18px 44px rgba(37, 211, 102, 0.22);
-}
-
-.whatsapp-action:hover {
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.58),
-    0 22px 58px rgba(37, 211, 102, 0.32);
-}
-
-=======
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
 .ghost-button {
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: rgba(255, 255, 255, 0.07);
@@ -199,27 +171,6 @@ p {
   background: rgba(255, 255, 255, 0.11);
 }
 
-<<<<<<< HEAD
-.ai-chat-scroll {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(242, 211, 156, 0.5) rgba(255, 255, 255, 0.04);
-}
-
-.ai-chat-scroll::-webkit-scrollbar {
-  width: 6px;
-}
-
-.ai-chat-scroll::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.ai-chat-scroll::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: rgba(242, 211, 156, 0.5);
-}
-
-=======
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
 .section-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -351,10 +302,6 @@ textarea:-webkit-autofill {
 
 .hero-zoom {
   animation: heroZoom 2.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-<<<<<<< HEAD
-  background-position: center bottom;
-=======
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
 }
 
 :focus-visible {
@@ -364,37 +311,13 @@ textarea:-webkit-autofill {
 
 @media (max-width: 700px) {
   .section-shell {
-<<<<<<< HEAD
-    padding: 82px 0;
-=======
     padding: 94px 0;
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
   }
 
   .section-eyebrow::before,
   .section-eyebrow::after {
     width: 18px;
   }
-<<<<<<< HEAD
-
-  .hero-grid {
-    background-size: 72px 72px;
-    opacity: 0.12;
-  }
-
-  .hero-vignette {
-    background:
-      linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.08) 34%, rgba(2, 2, 2, 0.9)),
-      linear-gradient(90deg, rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.08) 56%, rgba(0, 0, 0, 0.66));
-  }
-}
-
-@media (max-width: 480px) {
-  .premium-surface {
-    backdrop-filter: blur(16px) saturate(115%);
-  }
-=======
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
 }
 
 @media (prefers-reduced-motion: reduce) {

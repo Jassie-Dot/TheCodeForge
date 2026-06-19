@@ -11,10 +11,6 @@ node_modules
 dist
 dist-ssr
 *.local
-<<<<<<< HEAD
-Downloads
-=======
->>>>>>> 31ed656d8e789887d02f301e63f0177acbf44e84
 
 # Editor directories and files
 .vscode/*
