@@ -598,8 +598,8 @@ export function AiChatbot() {
               </div>
             </div>
 
-            <div className="border-t border-white/10 px-4 py-3">
-              <div className="mb-3 flex flex-wrap gap-2">
+            <div className="flex min-h-0 shrink flex-col border-t border-white/10 px-4 py-3">
+              <div className="mb-3 flex shrink-0 flex-wrap gap-2">
                 {quickActions.map((action) => (
                   <motion.button
                     key={action.label}
@@ -632,7 +632,7 @@ export function AiChatbot() {
                 {requestMode ? (
                   <motion.form
                     onSubmit={handleRequestSubmit}
-                    className="ai-chat-scroll mb-3 grid max-h-[44dvh] gap-3 overflow-y-auto border-t border-white/10 pr-1 pt-3 sm:max-h-[300px] sm:pr-2"
+                    className="ai-chat-scroll mb-3 grid shrink min-h-0 gap-3 overflow-y-auto border-t border-white/10 pr-1 pt-3 sm:pr-2"
                     initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
@@ -722,7 +722,7 @@ export function AiChatbot() {
                 ) : null}
               </AnimatePresence>
 
-              <form onSubmit={handleSubmit} className="flex items-end gap-2">
+              <form onSubmit={handleSubmit} className="flex shrink-0 items-end gap-2">
                 <textarea
                   ref={inputRef}
                   value={input}
