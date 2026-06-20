@@ -123,36 +123,36 @@ const works: Work[] = [
   {
     title: 'Jaskaranveer Portfolio',
     description:
-      'A comprehensive showcase of technical expertise, featuring responsive web applications, modern interfaces, and scalable full-stack solutions.',
+      'A comprehensive showcase of technical expertise, featuring responsive web applications, modern interfaces, and scalable web solutions.',
     href: jaskaranPortfolio,
     image: '/jaskaran-portfolio-hero.png',
-    tags: ['Full Stack Developer', 'Web Developer'],
+    tags: ['Web Developer'],
   },
   {
     title: 'Manijit Portfolio',
     description:
-      'A comprehensive showcase of technical expertise, featuring responsive web applications, modern interfaces, and scalable full-stack solutions.',
+      'A comprehensive showcase of technical expertise, featuring responsive web applications, modern interfaces, and scalable web solutions.',
     href: manijitPortfolio,
     image: '/manijit-portfolio-hero.png',
-    tags: ['Full Stack Developer', 'Web Developer'],
+    tags: ['Web Developer'],
   },
 ]
 
 const founders: Founder[] = [
   {
     name: 'Jaskaranveer Singh',
-    role: 'Co-Founder & Full Stack Developer',
+    role: 'Co-Founder & Web Developer',
     description:
-      'Full-stack developer focused on backend technologies, building premium web applications and scalable digital solutions.',
+      'Web developer focused on backend technologies, building premium web applications and scalable digital solutions.',
     portfolio: jaskaranPortfolio,
     image: '/jaskaran-cropped.jpg',
     imageClass: 'object-[center_30%] scale-[1.35]',
   },
   {
     name: 'Manijit Sau',
-    role: 'Co-Founder & Full Stack Developer',
+    role: 'Co-Founder & Web Developer',
     description:
-      'Full-stack developer focused on frontend technologies, building premium web applications and scalable digital solutions.',
+      'Web developer focused on frontend technologies, building premium web applications and scalable digital solutions.',
     portfolio: manijitPortfolio,
     image: '/manijit.jpg',
     imageClass: 'object-[center_20%] scale-[1.45]',
@@ -181,14 +181,14 @@ const processSteps = [
 const floatingContacts: FloatingContact[] = [
   {
     name: 'Manijit Sau',
-    role: 'Full Stack Developer',
+    role: 'Web Developer',
     href: 'https://wa.me/916280967201',
     image: '/manijit.jpg',
     imageClass: 'object-[center_20%] scale-[1.45]',
   },
   {
     name: 'Jaskaranveer Singh',
-    role: 'Full Stack Developer',
+    role: 'Web Developer',
     href: 'https://wa.me/919781010283',
     image: '/jaskaran-cropped.jpg',
     imageClass: 'object-[center_30%] scale-[1.35]',
@@ -628,7 +628,7 @@ function Team({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
     <section id="team" className="section-shell">
       <SectionHeading
         eyebrow="Meet Our Founders"
-        title="Two full-stack builders, one shared forge."
+        title="Two web builders, one shared forge."
         shouldReduceMotion={shouldReduceMotion}
       />
       <div className="mx-auto grid w-full max-w-5xl gap-5 px-5 md:grid-cols-2">
