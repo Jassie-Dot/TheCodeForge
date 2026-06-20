@@ -632,7 +632,7 @@ export function AiChatbot() {
                 {requestMode ? (
                   <motion.form
                     onSubmit={handleRequestSubmit}
-                    className="ai-chat-scroll mb-3 grid max-h-[44dvh] gap-3 overflow-y-auto border-t border-white/10 pr-1 pt-3 sm:max-h-none sm:overflow-visible sm:pr-0"
+                    className="ai-chat-scroll mb-3 grid max-h-[44dvh] gap-3 overflow-y-auto border-t border-white/10 pr-1 pt-3 sm:max-h-[300px] sm:pr-2"
                     initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
